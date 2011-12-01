@@ -1,0 +1,16 @@
+set t_Co=256
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+set et!
+set cursorline cursorcolumn
+nmap ,n <Esc>:tabn<CR>
+nmap ,p <Esc>:tabp<CR>
+nmap ,t <Esc>:tabnew<CR>
+"set t_ts=^[]0;
+"set t_fs=^G
+"set title
+autocmd FileType actionscript set omnifunc=actionscriptcomplete#CompleteAS
+autocmd FileType actionscript :set dictionary=$HOME/.vim/dict/actionscript.dict
+au BufNewFile,BufRead *.as set ft=actionscript
