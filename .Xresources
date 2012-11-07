@@ -1,70 +1,46 @@
-! Xft settings ---------------------------------------------------------------
+! xft
 
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-Xft.lcdfilter:  lcddefault
+xft.dpi:                96
+xft.antialias:          true
+xft.rgba:               rgb
+xft.hinting:            true
+xft.hintstyle:          hintmedium
+xft.lcdfilter:          lcddefault
 
-!-------------------------------------------------------------------------------
-! URxvt settings
-!-------------------------------------------------------------------------------
+! urxvt
 
-URxvt.depth:                32
-URxvt.geometry:             90x30
-URxvt.transparent:          true
-! URxvt.shading:              0
-! URxvt.fading:               0
-! URxvt.urgentOnBell:         true
-! URxvt.visualBell:           true
-! Rxvt.inheritPixmap:        true
-URxvt.loginShell:           true
-URxvt.saveLines:            500
-URxvt.internalBorder:       2
-URxvt.externalBorder:       0
-URxvt.lineSpace:            0
+urxvt.loginShell:       true
+urxvt.saveLines:        500
+urxvt.internalBorder:   2
+urxvt.externalBorder:   0
+urxvt.lineSpace:        0
+urxvt.scrollStyle:      rxvt
+urxvt.scrollBar:        false
+urxvt.cursorBlink:      true
+urxvt.cursorUnderline:  true
 
-! Fonts
-URxvt.allow_bold:           true
-URxvt.font: xft:Inconsolata:pixelsize=11:antialias=false:hinting=true
-URxvt*font: xft:Inconsolata:pixelsize=11:antialias=false:hinting=true
-URxvt*boldFont: xft:Inconsolata:bold:pixelsize=11:antialias=false:hinting=true
+! perl extensions
 
-! Fix font space
-! URxvtURxvt*letterSpace: -1
+urxvt.perl-ext-common:  default,clipboard,matcher,keyboard-select
+urxvt.keysum.M-u:       perl:url-select:select_next
+urxvt.urlLauncher:      /usr/bin/iceweasel
+urxvt.underlineURLs:    true
+urxvt.keysym.M-Escape:  perl.keyboard-select:active
+urxvt.keysym.M-c:       perl:clipboard:copy
+urxvt.keysym.M-v:       perl:clipboard:paste
+urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 
-! Scrollbar
-URxvt.scrollStyle:          rxvt
-URxvt.scrollBar:            false
+! general
 
-! Perl extensions
-URxvt.perl-ext-common:      default,clipboard,matcher,keyboard-select
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.urlLauncher:          /usr/bin/iceweasel
-URxvt.underlineURLs:        True
-URxvt.matcher.button:       1
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-c:           perl:clipboard:copy
-URxvt.keysym.M-v:           perl:clipboard:paste
-URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
-
-! Cursor
-URxvt.cursorBlink:          true
-!URxvt.cursorColor:          #657b83
-URxvt.cursorUnderline:      true
-
-! Pointer
-URxvt.pointerBlank:         true
+*depth:                 32
+*allow_bold:            true
+*font:                  xft:Inconsolata:size=12:antialias=true:hinting=true
+*boldFont:              xft:Inconsolata:bold:size=12:antialias=true:hinting=true
+*letterSpace:           -1
 
 !! drop in Solarized colorscheme for Xresources
 !!
-!! ## Installation
-!! 1) Write to $HOME/.Xresources
-!! 2) If not using Xsession, you must add the line `xrdb -merge ~/.Xresources`
-!!    to `.xinitrc`. See http://manpages.ubuntu.com/Xsession for more details.
-!!
-!!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   LURxvt*AURxvt*B      RGB         HSB
+!!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
 !!--------- ------- ---- -------  ----------- ---------- ----------- -----------
 !!base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
 !!base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
@@ -100,43 +76,44 @@ URxvt.pointerBlank:         true
 #define S_cyan          #2aa198
 #define S_green         #859900
 
-URxvt*background:            [80]S_base03
-URxvt*tintColor:             S_base03
-URxvt*foreground:            S_base0
-URxvt*fading:                40
-URxvt*fadeColor:             S_base03
-URxvt*cursorColor:           S_base1
-URxvt*pointerColorBackground:S_base01
-URxvt*pointerColorForeground:S_base1
+*background:            S_base03
+urxvt.transparent:     true
+urxvt.tintColor:       S_base03
+*foreground:            S_base0
+*fading:                40
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
 
 !! black dark/light
-URxvt*color0:                S_base02
-URxvt*color8:                S_base03
+*color0:                S_base02
+*color8:                S_base03
 
 !! red dark/light
-URxvt*color1:                S_red
-URxvt*color9:                S_orange
+*color1:                S_red
+*color9:                S_orange
 
 !! green dark/light
-URxvt*color2:                S_green
-URxvt*color10:               S_base01
+*color2:                S_green
+*color10:               S_base01
 
 !! yellow dark/light
-URxvt*color3:                S_yellow
-URxvt*color11:               S_base00
+*color3:                S_yellow
+*color11:               S_base00
 
 !! blue dark/light
-URxvt*color4:                S_blue
-URxvt*color12:               S_base0
+*color4:                S_blue
+*color12:               S_base0
 
 !! magenta dark/light
-URxvt*color5:                S_magenta
-URxvt*color13:               S_violet
+*color5:                S_magenta
+*color13:               S_violet
 
 !! cyan dark/light
-URxvt*color6:                S_cyan
-URxvt*color14:               S_base1
+*color6:                S_cyan
+*color14:               S_base1
 
 !! white dark/light
-URxvt*color7:                S_base2
-URxvt*color15:               S_base3
+*color7:                S_base2
+*color15:               S_base3
