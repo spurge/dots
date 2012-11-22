@@ -77,7 +77,7 @@
     XF86AudioNext 
 
 #Mic
-"amixer set Capture toggle 100%"
+"amixer set Capture toggle 60%"
     m:0x0 + c:156
     XF86Launch1 
 
