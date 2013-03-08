@@ -36,7 +36,7 @@ urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 *allow_bold:            true
 *font:                  xft:Inconsolata:size=12:antialias=true:hinting=true
 *boldFont:              xft:Inconsolata:bold:size=12:antialias=true:hinting=true
-*letterSpace:           -1
+!*letterSpace:           -1
 
 !! drop in Solarized colorscheme for Xresources
 !!

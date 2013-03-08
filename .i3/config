@@ -26,7 +26,6 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-#bindsym $mod+d exec gnome_do
 
 # change focus
 bindsym $mod+j focus left
@@ -102,12 +101,17 @@ bindsym $mod+Shift+parenleft move container to workspace 8
 bindsym $mod+Shift+parenright move container to workspace 9
 bindsym $mod+Shift+equal move container to workspace 10
 
+# move workspaces between screens
+bindsym $mod+Shift+Z move workspace to output left
+bindsym $mod+Shift+X move workspace to output right
+
 # reload the configuration file
 bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
+#bindsym $mod+Shift+E exit
+bindsym $mod+Shift+E exec /usr/bin/xfce4-session-logout
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -146,7 +150,7 @@ client.urgent           #2f343a #dc322f #ffffff #900000
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	position top
+	position bottom
 	font xft:Inconsolata 12
 	colors {
 		background #002b36
@@ -159,3 +163,45 @@ bar {
 	status_command ~/bin/i3status.sh
 	tray_output primary
 }
+
+# fxce notifications
+for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
+for_window [class="apport-gtk"] floating enable; border none; focus mode_toggle
+
+# terminal
+exec xrdb -merge ~/.Xresources
+exec urxvtd --quiet --opendisplay --fork
+
+# screen locker
+exec xautolock -time 10 -locker /home/spurge/bin/lock.sh
+
+# authentication
+#exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+# gnome settings
+#exec /usr/bin/gnome-settings-daemon
+
+# network manager
+#exec /usr/bin/nm-applet
+
+# bluetooth
+#exec /usr/bin/bluetooth-applet
+
+# workrave
+for_window [class="workrave"] floating enable; border none; focus mode_toggle
+#exec /usr/bin/workrave
+
+# redshift
+exec redshift -l 59.25:18.133333
+
+# dropbox
+exec ~/bin/dropboxd
+
+# canto
+exec /usr/bin/canto-fetch -b
+
+# volume
+exec volumeicon
+
+# background image
+exec feh --bg-fill ~/Bilder/ebbe/DSC_4434.jpg
