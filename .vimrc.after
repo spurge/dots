@@ -1,4 +1,4 @@
-call pathogen#infect()
+"call pathogen#infect()
 
 "set t_Co=256
 syntax enable
@@ -6,6 +6,7 @@ syntax on
 set background=dark
 let g:solarized_termtrans=1
 colorscheme solarized
+"hi Normal ctermbg=NONE
 
 set et!
 set cursorline cursorcolumn
@@ -16,6 +17,8 @@ set list listchars=tab:\ \ ,trail:·
 "set list
 set encoding=utf-8
 set mouse=a
+highlight colorcolumn cterm=NONE
+let &colorcolumn=join(range(81,999),",")
 
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
