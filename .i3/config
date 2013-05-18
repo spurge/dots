@@ -198,7 +198,7 @@ exec redshift -l 59.25:18.133333
 exec ~/bin/dropboxd
 
 # canto
-exec /usr/bin/canto-fetch -b
+#exec /usr/bin/canto-fetch -b
 
 # volume
 exec volumeicon
