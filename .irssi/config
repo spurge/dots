@@ -24,7 +24,7 @@ servers = (
   { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
 	{
-		address = "lindbohm.freenode.net";
+		address = "leguin.freenode.net";
 		chatnet = "freenode";
 		port = "6667";
 		autoconnect = "Yes";

@@ -151,7 +151,7 @@ client.urgent           #2f343a #dc322f #ffffff #900000
 # finds out, if available)
 bar {
 	position bottom
-	font xft:Inconsolata 12
+	font xft:Inconsolata 10
 	colors {
 		background #002b36
 		statusline #eee8d5
@@ -195,7 +195,7 @@ for_window [class="workrave"] floating enable; border none; focus mode_toggle
 exec redshift -l 59.25:18.133333
 
 # dropbox
-exec ~/bin/dropboxd
+#exec ~/bin/dropboxd
 
 # canto
 #exec /usr/bin/canto-fetch -b
@@ -204,4 +204,5 @@ exec ~/bin/dropboxd
 exec volumeicon
 
 # background image
-exec feh --bg-fill ~/Bilder/ebbe/DSC_4434.jpg
+#exec feh --bg-fill ~/Bilder/ebbe/DSC_4434.jpg
+exec feh --bg-fill ~/Bilder/Bakgrunder/5462025355_f745e4b2a0_o.jpg

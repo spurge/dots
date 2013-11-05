@@ -23,7 +23,7 @@ urxvt.cursorUnderline:  true
 
 urxvt.perl-ext-common:  default,clipboard,matcher,keyboard-select
 urxvt.keysum.M-u:       perl:url-select:select_next
-urxvt.urlLauncher:      /usr/bin/iceweasel
+urxvt.urlLauncher:      /usr/bin/firefox
 urxvt.underlineURLs:    true
 urxvt.keysym.M-Escape:  perl.keyboard-select:active
 urxvt.keysym.M-c:       perl:clipboard:copy

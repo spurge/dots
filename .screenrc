@@ -2,8 +2,8 @@ defscrollback 5000
 
 #shell -${SHELL}
 
-screen -t nollan
-screen -t ettan
+screen -t mail sup-mail
+screen -t irssi irssi
 screen -t tvaan
 screen -t trean
 altscreen on
