@@ -1,0 +1,9 @@
+#!/bin/sh
+# genpasswd [number of characters]
+
+if [ -z "$1" ]; then
+	echo "usage: genpasswd [number of characters]"
+	exit 1
+fi
+
+tr -dc A-Za-z0-9_ < /dev/urandom | tr -dc [:alnum:] | tr -d 1IlioO0 | head -c$1 | xargs
