@@ -2,10 +2,10 @@ defscrollback 5000
 
 #shell -${SHELL}
 
-screen -t mail sup-mail
-screen -t irssi irssi
-screen -t tvaan
-screen -t trean
+#screen -t mail sup-mail
+#screen -t irssi irssi
+#screen -t tvaan
+#screen -t trean
 altscreen on
 term "screen-256color"
 #term xterm-256color
