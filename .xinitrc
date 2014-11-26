@@ -1,20 +1,11 @@
 #!/bin/bash
 
-# terminal
-#xrdb -merge ~/.Xresources
-#urxvtd --quiet --opendisplay --fork
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+	for f in /etc/X11/xinit/xinitrc.d/*; do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
+fi
 
-# screensaver
-#xautolock -time 5 -locker ~/bin/lock.sh &
-
-# daylight
-#redshift -l 59.25:18.133333 &
-
-# background
-#feh --bg-scale /usr/share/backgrounds/gnome/Stripes.jpg
-#feh --bg-fill ~/Bilder/Bakgrunder/all_the_tributaries_by_plangkye-d5kiz66.png.jpeg
-
-# keybindings
-#xbindkeys &
-
-exec /usr/bin/i3
+# wm
+exec ck-launch-session dbus-launch --exit-with-session /usr/bin/i3

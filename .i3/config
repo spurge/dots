@@ -110,8 +110,8 @@ bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+E exit
-bindsym $mod+Shift+E exec /usr/bin/xfce4-session-logout
+#bindsym $mod+Shift+E exec /usr/bin/xfce4-session-logout
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i4? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -151,7 +151,7 @@ client.urgent           #2f343a #dc322f #ffffff #900000
 # finds out, if available)
 bar {
 	position bottom
-	font xft:Inconsolata 10
+	font xft:Inconsolata 12
 	colors {
 		background #002b36
 		statusline #eee8d5
@@ -161,38 +161,50 @@ bar {
 	}
 	#status_command i3status -c ~/.i3/i3status.conf
 	status_command ~/bin/i3status.sh
-	tray_output primary
+	#tray_output primary
 }
 
 # fxce notifications
-for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
-for_window [class="apport-gtk"] floating enable; border none; focus mode_toggle
+#for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
+#for_window [class="apport-gtk"] floating enable; border none; focus mode_toggle
 
 # terminal
 exec xrdb -merge ~/.Xresources
 exec urxvtd --quiet --opendisplay --fork
 
-# screen locker
-exec xautolock -time 10 -locker /home/spurge/bin/lock.sh
+# screensaver
+exec xautolock -time 5 -locker ~/bin/lock.sh &
+
+# daylight
+exec redshift -l 59.25:18.133333
+
+# monitors
+exec ~/bin/monitor-hotplug.sh
+
+# background
+exec ~/bin/set-background.sh
+
+# keybindings
+exec xbindkeys -f ~/.xbindkeysrc
 
 # authentication
-#exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
-# gnome settings
-#exec /usr/bin/gnome-settings-daemon
+# filemanagement
+exec --no-startup-id /usr/bin/thunar --daemon
 
 # network manager
-#exec /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/nm-applet
 
 # bluetooth
-#exec /usr/bin/bluetooth-applet
+exec --no-startup-id /usr/bin/blueman-applet
+
+# power manager
+exec --no-startup-id /usr/bin/xfce4-power-manager
 
 # workrave
-for_window [class="workrave"] floating enable; border none; focus mode_toggle
+#for_window [class="workrave"] floating enable; border none; focus mode_toggle
 #exec /usr/bin/workrave
-
-# redshift
-exec redshift -l 59.25:18.133333
 
 # dropbox
 #exec ~/bin/dropboxd
@@ -201,7 +213,4 @@ exec redshift -l 59.25:18.133333
 #exec /usr/bin/canto-fetch -b
 
 # volume
-exec volumeicon
-
-# background image
-exec set-background.sh
+exec --no-startup-id /usr/bin/pasystray

@@ -9,9 +9,7 @@
 #umask 022
 
 export LANG=sv_SE.utf8
-#export TERM=rxvt-unicode
 export TERMINAL=urxvtc
-#export TERMINAL=xfce4-terminal
 export EDITOR=vim
 
 set -o vi
@@ -38,11 +36,6 @@ if [ -d "$HOME/bin" ] ; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-#if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
-#	startx
-	#while true
-	#do
-		#startx --
-		#sleep 10
-	#done
-#fi
+if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
+	startx
+fi
