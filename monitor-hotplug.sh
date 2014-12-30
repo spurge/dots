@@ -27,8 +27,9 @@ done
 
 if [ "$USER" == "spurge" ]; then
 	eval xrandr ${PROFILES[$ACTIVE]}
-	set-background.sh
+	~/bin/set-background.sh
+	killall conky
+	conky -c ~/.conkyrc > /dev/null 2>&1
 else
-	su - spurge -c "xrandr -d :0.0 ${PROFILES[$ACTIVE]}"
-	su - spurge -c "/home/spurge/bin/set-background.sh"
+	su - spurge -c "xrandr -d :0.0 ${PROFILES[$ACTIVE]}; /home/spurge/bin/set-background.sh; killall conky; conky -c ~/.conkyrc > /dev/null 2>&1"
 fi
