@@ -1,11 +1,3 @@
 #!/bin/bash
 
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-	for f in /etc/X11/xinit/xinitrc.d/*; do
-		[ -x "$f" ] && . "$f"
-	done
-	unset f
-fi
-
-# wm
-exec ck-launch-session dbus-launch --exit-with-session /usr/bin/i3
+exec /usr/bin/dbus-launch --exit-with-session /usr/bin/i3

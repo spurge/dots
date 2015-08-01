@@ -8,11 +8,14 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-export LANG=sv_SE.utf8
+export LANG=sv_SE.UTF-8
 export TERMINAL=urxvtc
 export EDITOR=vim
+export WORKON_HOME=~/.virtualenvs
 
-set -o vi
+source /usr/bin/virtualenvwrapper.sh
+
+#set -o vi
 set bell-style none
 
 # if running bash
@@ -25,10 +28,10 @@ if [ -n "$BASH_VERSION" ]; then
 	if [ -f "$HOME/.bash_prompt" ]; then
 		. "$HOME/.bash_prompt"
 	fi
+fi
 
-	if [ -f "$HOME/.dircolors" ]; then
-		eval `dircolors $HOME/.dircolors`
-	fi
+if [ -f "$HOME/.dircolors" ]; then
+	eval `dircolors $HOME/.dircolors`
 fi
 
 # set PATH so it includes user's private bin if it exists

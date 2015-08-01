@@ -51,9 +51,13 @@ ${alignr}$font cpu -─┤    │
 ${alignr}$font used -─┤    │    │  
 ${alignr}$font < ${cpu 1}% > cpu1 -─┤    │    │    │  
 ${alignr}$font < ${cpu 2}% > cpu2 -─┘    │    │    │  
+${alignr}$font < ${cpu 3}% > cpu3 -─┘    │    │    │  
+${alignr}$font < ${cpu 4}% > cpu4 -─┘    │    │    │  
 ${alignr}$font freq -─┤    │    │  
 ${alignr}$font < ${freq 1}mhz > cpu1 -─┤    │    │    │  
 ${alignr}$font < ${freq 2}mhz > cpu2 -─┘    │    │    │  
+${alignr}$font < ${freq 3}mhz > cpu3 -─┘    │    │    │  
+${alignr}$font < ${freq 4}mhz > cpu4 -─┘    │    │    │  
 ${alignr}$font < $loadavg > load -─┤    │    │  
 ${alignr}$font < ${top name 1}  ${top cpu 1} > -─┤    │    │  
 ${alignr}$font < ${top name 2}  ${top cpu 2} > -─┤    │    │  
@@ -81,10 +85,6 @@ ${alignr}$font < $swapperc% - $swap/$swapmax > swap -─┤    │
 ${alignr}$font < ${swapbar 5,120} > -─┘    │    │  
 ${alignr}$font < ${fs_used /}/${fs_size /} > root -─┤    │  
 ${alignr}$font < ${fs_bar 5,120 /} > -─┘    │    │  
-${alignr}$font < ${fs_used /home}/${fs_size /home} > home -─┤    │  
-${alignr}$font < ${fs_bar 5,120 /home} > -─┘    │    │  
-${alignr}$font < ${fs_used /var}/${fs_size /var} >  var -─┘    │  
-${alignr}$font < ${fs_bar 5,120 /var} > -─┘    │    │  
 ${alignr}$font │  
 ${alignr}$font net -─┘  
 ${alignr}$font < ${tcp_portmon 1 65535 count} > connections -─┤       

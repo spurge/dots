@@ -34,8 +34,8 @@ urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 
 *depth:                 32
 *allow_bold:            true
-*font:                  xft:Inconsolata:size=12:antialias=true:hinting=true
-*boldFont:              xft:Inconsolata:bold:size=12:antialias=true:hinting=true
+*font:                  xft:DejaVu Sans Mono for Powerline:size=10:antialias=true:hinting=true
+*boldFont:              xft:DejaVu Sans Mono for Powerline:bold:size=10:antialias=true:hinting=true
 !*letterSpace:           -1
 
 !! drop in Solarized colorscheme for Xresources
@@ -76,9 +76,10 @@ urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 #define S_cyan          #2aa198
 #define S_green         #859900
 
-*background:            S_base03
-urxvt.transparent:     true
-urxvt.tintColor:       S_base03
+*background:            [90]#00110f
+!*background:            [80]#002b36
+!urxvt.transparent:      true
+!urxvt.tintColor:        S_base03
 *foreground:            S_base0
 *fading:                40
 *fadeColor:             S_base03
