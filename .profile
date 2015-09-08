@@ -11,9 +11,9 @@
 export LANG=sv_SE.UTF-8
 export TERMINAL=urxvtc
 export EDITOR=vim
-export WORKON_HOME=~/.virtualenvs
+#export WORKON_HOME=~/.virtualenvs
 
-source /usr/bin/virtualenvwrapper.sh
+#source /usr/bin/virtualenvwrapper.sh
 
 #set -o vi
 set bell-style none
@@ -39,6 +39,10 @@ if [ -d "$HOME/bin" ] ; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
-	startx
+if [ -d "$HOME/.gem/ruby/2.2.0/bin" ] ; then
+	PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
 fi
+
+#if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
+#	startx
+#fi

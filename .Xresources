@@ -1,6 +1,6 @@
 ! xft
 
-xft.dpi:                96
+xft.dpi:                144
 xft.antialias:          true
 xft.rgba:               rgb
 xft.hinting:            true
@@ -21,7 +21,7 @@ urxvt.cursorUnderline:  true
 
 ! perl extensions
 
-urxvt.perl-ext-common:  default,clipboard,matcher,keyboard-select
+urxvt.perl-xt-common:  default,clipboard,matcher,keyboard-select
 urxvt.keysum.M-u:       perl:url-select:select_next
 urxvt.urlLauncher:      /usr/bin/firefox
 urxvt.underlineURLs:    true
@@ -34,9 +34,8 @@ urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 
 *depth:                 32
 *allow_bold:            true
-*font:                  xft:DejaVu Sans Mono for Powerline:size=10:antialias=true:hinting=true
-*boldFont:              xft:DejaVu Sans Mono for Powerline:bold:size=10:antialias=true:hinting=true
-!*letterSpace:           -1
+*font:                  xft:Inconsolata:size=12:antialias=true:hinting=true
+*boldFont:              xft:Inconsolata:bold:size=12:antialias=true:hinting=true
 
 !! drop in Solarized colorscheme for Xresources
 !!
@@ -76,45 +75,118 @@ urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 #define S_cyan          #2aa198
 #define S_green         #859900
 
-*background:            [90]#00110f
-!*background:            [80]#002b36
-!urxvt.transparent:      true
-!urxvt.tintColor:        S_base03
-*foreground:            S_base0
-*fading:                40
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+!*background:            [90]#00110f
+!*foreground:            S_base0
+!*fading:                40
+!*fadeColor:             S_base03
+!*cursorColor:           S_base1
+!*pointerColorBackground:S_base01
+!*pointerColorForeground:S_base1
 
 !! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+!*color0:                S_base02
+!*color8:                S_base03
 
 !! red dark/light
-*color1:                S_red
-*color9:                S_orange
+!*color1:                S_red
+!*color9:                S_orange
 
 !! green dark/light
-*color2:                S_green
-*color10:               S_base01
+!*color2:                S_green
+!*color10:               S_base01
 
 !! yellow dark/light
-*color3:                S_yellow
-*color11:               S_base00
+!*color3:                S_yellow
+!*color11:               S_base00
 
 !! blue dark/light
-*color4:                S_blue
-*color12:               S_base0
+!*color4:                S_blue
+!*color12:               S_base0
 
 !! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
+!*color5:                S_magenta
+!*color13:               S_violet
 
 !! cyan dark/light
-*color6:                S_cyan
-*color14:               S_base1
+!*color6:                S_cyan
+!*color14:               S_base1
 
 !! white dark/light
-*color7:                S_base2
-*color15:               S_base3
+!*color7:                S_base2
+!*color15:               S_base3
+
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+! hard contrast: *background: #1d2021
+*background: [95]#282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
+
+! -----------------------------------------------------------------------------
+! File: gruvbox-urxvt256.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 13 Dec 2013
+! -----------------------------------------------------------------------------
+
+URxvt.color24:  #076678
+URxvt.color66:  #427b58
+URxvt.color88:  #9d0006
+URxvt.color96:  #8f3f71
+URxvt.color100: #79740e
+URxvt.color108: #8ec07c
+URxvt.color109: #83a598
+URxvt.color130: #af3a03
+URxvt.color136: #b57614
+URxvt.color142: #b8bb26
+URxvt.color167: #fb4934
+URxvt.color175: #d3869b
+URxvt.color208: #fe8019
+URxvt.color214: #fabd2f
+URxvt.color223: #ebdbb2
+URxvt.color228: #f4e8ba
+URxvt.color229: #fdf4c1
+URxvt.color230: #ffffc8
+URxvt.color234: #1d2021
+URxvt.color235: #282828
+URxvt.color236: #32302f
+URxvt.color237: #3c3836
+URxvt.color239: #504945
+URxvt.color241: #665c54
+URxvt.color243: #7c6f64
+URxvt.color244: #928374
+URxvt.color245: #928374
+URxvt.color246: #a89984
+URxvt.color248: #bdae93
+URxvt.color250: #d5c4a1

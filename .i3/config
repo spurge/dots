@@ -25,7 +25,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'Inconsolata 12'
 
 # change focus
 bindsym $mod+j focus left
@@ -162,9 +162,10 @@ bar {
 		# class            border  backgr  text
 		#focused_workspace #000000 #000000 #000000
 	}
+	#status_command i3status
 	#status_command i3status -c ~/.i3/i3status.conf
 	status_command ~/bin/i3status.sh
-	#tray_output primary
+	tray_output primary
 }
 
 #keyboard layout
@@ -174,17 +175,18 @@ exec setxkbmap se
 exec compton --config ~/.compton.conf -b
 
 # conky
-exec conky -c ~/.conkyrc
+#exec conky -c ~/.conkyrc
 
 # terminal
-exec xrdb -load ~/.Xresources
+#exec xrdb -load ~/.Xresources
 exec urxvtd --quiet --opendisplay --fork
 
 # screensaver
-exec xautolock -time 5 -locker ~/bin/lock.sh
+exec xss-lock -- ~/bin/lock.sh
+exec xautolock -time 10 -locker ~/bin/lock.sh
 
 # monitors
-exec ~/bin/monitor-hotplug.sh
+#exec ~/bin/monitor-hotplug.sh
 
 # background
 exec ~/bin/set-background.sh
@@ -193,7 +195,8 @@ exec ~/bin/set-background.sh
 exec xbindkeys -f ~/.xbindkeysrc
 
 # filemanagement
-exec --no-startup-id /usr/bin/thunar --daemon
+#exec --no-startup-id /usr/bin/thunar --daemon
+exec dropbox
 
 # bluetooth
 #exec --no-startup-id /usr/bin/blueman-applet
