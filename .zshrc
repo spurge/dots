@@ -79,6 +79,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+function host() {
+	if [[ -n "$SSH_CLIENT" ]]; then
+		echo '%{$fg[yellow]%}%n%{$reset_color%}@%{$fg[red]%}%m%{$reset_color%} '
+	fi
+}
+
+PROMPT="$(host)$PROMPT"
+
 source ~/.profile
 
 bindkey -v
