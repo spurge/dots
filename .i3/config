@@ -161,17 +161,20 @@ client.urgent           #cc241d #cc241d #ffffff #fdf1c7
 bar {
     position bottom
     font pango:Inconsolata 12
+    separator_symbol " | "
+    tray_padding 5
+
     colors {
         background #32302f
         statusline #ebdbb2
+        separator  #928374
 
         # class            border  backgr  text
         focused_workspace  #a89984 #a89984 #1d2021
         inactive_workspace #665c54 #665c54 #ebdbb2
     }
-    #status_command i3status -c ~/.i3/i3status.conf
+
     status_command ~/bin/i3status.sh
-    #tray_output primary
 }
 
 #keyboard layout
