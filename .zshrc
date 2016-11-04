@@ -1,14 +1,19 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/home/spurge/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="minimal"
+#ZSH_THEME="minimal"
+#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -79,14 +84,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-function host() {
-	if [[ -n "$SSH_CLIENT" ]]; then
-		echo '%{$fg[yellow]%}%n%{$reset_color%}@%{$fg[red]%}%m%{$reset_color%} '
-	fi
-}
+DEFAULT_USER="spurge"
+#PROMPT="$(host)$PROMPT"
+#PROMPT="%{%f%b%k%}$(my_prompt) "
+#RPROMPT="%{%F{cyan}%}%~"
 
-PROMPT="$(host)$PROMPT"
-
+source ~/.zshtheme
 source ~/.profile
 
 bindkey -v

@@ -3,11 +3,11 @@
 i3status -c ~/.i3/i3status.conf | ( read LINE && echo $LINE && while :
 do
 	read LINE
-	GREEN="859900"
-	RED="cb4b16"
-	MAGENTA="d33682"
-	BLUE="268bd2"
-	ORANGE="cb4b16"
+	GREEN="98971a"
+	RED="cc241d"
+	MAGENTA="b16286"
+	BLUE="458588"
+	ORANGE="d79921"
 	ADD=""
 
 	# CMUS
