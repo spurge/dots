@@ -96,3 +96,5 @@ bindkey -v
 
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
+
+[ -s "/home/spurge/.dnx/dnvm/dnvm.sh" ] && . "/home/spurge/.dnx/dnvm/dnvm.sh" # Load dnvm
