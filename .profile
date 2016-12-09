@@ -10,10 +10,13 @@
 
 export LANG=sv_SE.UTF-8
 export TERMINAL=urxvtc
-export EDITOR=vim
-#export WORKON_HOME=~/.virtualenvs
+export EDITOR=nvim
+export GOPATH=~/.golang
+export WORKON_HOME=~/.virtualenvs
+export ANDROID_HOME=/opt/android-sdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
-#source /usr/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 #set -o vi
 set bell-style none
@@ -35,14 +38,24 @@ if [ -f "$HOME/.dircolors" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-	PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/bin" ]; then
+	export PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$HOME/.gem/ruby/2.2.0/bin" ] ; then
-	PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
+# set PATH so it includes nodenv
+if [ -d "$HOME/.nodenv" ]; then
+	export PATH="$HOME/.nodenv/bin:$PATH"
+	eval "$(nodenv init -)"
 fi
 
-#if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
-#	startx
-#fi
+if [ -d "$HOME/.gem/ruby/2.3.0/bin" ]; then
+	export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
+fi
+
+if [ -d "$HOME/.golang/bin" ]; then
+	export PATH="$HOME/.golang/bin:$PATH"
+fi
+
+if [ -d "/opt/android-sdk/tools" ]; then
+	export PATH="/opt/android-sdk/tools:$PATH"
+fi
