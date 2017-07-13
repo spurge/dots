@@ -1,6 +1,6 @@
 ! xft
 
-xft.dpi:                144
+xft.dpi:                96
 xft.antialias:          true
 xft.rgba:               rgb
 xft.hinting:            true
@@ -34,8 +34,8 @@ urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 
 *depth:                 32
 *allow_bold:            true
-*font:                  xft:Fantasque Sans Mono:style=Regular:size=14:antialias=true:hinting=true
-*boldFont:              xft:Fantasque Sans Mono:style=Bold:size=14:antialias=true:hinting=true
+*font:                  xft:Fantasque Sans Mono:style=Regular:size=11:antialias=true:hinting=true
+*boldFont:              xft:Fantasque Sans Mono:style=Bold:size=11:antialias=true:hinting=true
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
@@ -81,7 +81,7 @@ urxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 ! Source: https://github.com/morhetz/gruvbox-generalized
 ! Last Modified: 6 Sep 2014
 ! -----------------------------------------------------------------------------
-
+!
 ! hard contrast: *background: #f9f5d7
 !*background: [85]#fbf1c7
 ! soft contrast: *background: #f2e5bc
